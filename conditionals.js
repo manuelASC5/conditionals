@@ -1,49 +1,21 @@
-///////////////
-// BACKSTORY //
-///////////////
-// You're an android in an unforgiving world where humans rule.
-// Your decisions now will affect the world later.
-// What choices will you make?
-// This is totally NOT a rip off from a popular 2018 game.
 
-///////////////////////////////
-// BASIC "IF/ELSE" STATEMENT //
-///////////////////////////////
-// Create a variable "username" and set it equal to the user's
-// first command line argument when calling 'node conditional.js'
 let username = process.argv[2];
 
-// If "username" is defined, console.log(`Hello, ${username}`)
-// Otherwise, console.log("You must provide a username");
+
 if(username == undefined){
     console.log("you must provide a username");
 }else{
     console.log("hello "+username)
 }
 
-// HINT: you can check if a variable is defined by using it
-// as a condition. Ex. if(someVariable){...}
 
-// Test to make sure the script is working as intended. Save this file
-// and in the command line execute 'node conditional.js'
-// Then try 'node conditional.js Marcus'
-
-/////////////////////////////////
-// "IF/ELSE IF/ELSE" STATEMENT //
-/////////////////////////////////
 console.log("You find yourself in a store shopping...");
-// Create a variable "health" and set it equal to 100
-// Create a variable "money" and set it equal to 100
+
 let health = 100
 let money = 100
-// Create a variable "item" and set it equal to the user's second command
-// line argument
+
 let item = process.argv[3]
-// If "item" is "jacket", subtract 40 from "money" and add 20 to "health" and console.log("You bought a jacket");
-// else if "item" is "candy", subtract 10 from "money" and console.log("You bought candy");
-// else if "item" is "paint", subtract 30 from "money" and console.log("You bought paint");
-// else if "item" is "hammer", subtract 70 from "money" and console.log("You bought a hammer");
-// else console.log "You bought nothing"
+
 if(item=="jacket"){
     money-=40;
     health+=20;
@@ -54,14 +26,14 @@ if(item=="jacket"){
 }else if(item=="paint"){
     money-=30;
     console.log("you bought paint");
+}else if(item=="hammer"){
+    money-=70
+    console.log("you bought a hammer")
+}else{
+    console.log("you bought nothing")
 }
-// console.log(`You have ${money} dollars left.`);
+console.log(`You have ${money} dollars left.`);
 
-// Test to make sure the script is working as intended.
-
-///////////////////////
-// BOOLEAN OPERATORS //
-///////////////////////
 console.log("You exit the store and find yourself in the middle of an anti-android protest!");
 console.log("You could run or stay...");
 const randomPerson = Math.random() > .5 ? "John" : "Felipe"; 
@@ -70,12 +42,16 @@ const randomPerson = Math.random() > .5 ? "John" : "Felipe";
 // We'll discuss Math.random() later this week!
 // If you're curious about the rest, look up "JS ternary operator"
 
-// Create a variable "choice" and set it equal to the user's third
-// command line argument
 
+let choice = process.argv[4]
 // If "choice" is NOT defined (recall how we did this with the "username" variable)
 //      - console.log("You shut down due to inactivity and get robbed of all your money");
 //      - reduce "money" to 0
+if(choice==undefined){
+    console.log("you shut down due to inactivity and get robbed of all your money")
+}else{
+    console.log("nice"+choice)
+}
 
 // Else if "choice" is NOT "run" AND "randomPerson" is "Felipe" 
 //      console.log("The protesters attack you...");
